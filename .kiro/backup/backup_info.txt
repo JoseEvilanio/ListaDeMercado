@@ -1,0 +1,8 @@
+Backup criado em: 22/07/2025 21:51:48,95 
+Branch de backup: backup-supabase 
+ 
+Para restaurar este backup, use os seguintes comandos: 
+git checkout backup-supabase 
+ 
+Para voltar à branch principal após verificar o backup: 
+git checkout master 

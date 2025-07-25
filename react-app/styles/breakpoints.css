@@ -1,0 +1,90 @@
+/* 
+ * Breakpoints System
+ * Standardized media queries for consistent responsive behavior
+ */
+
+/* 
+ * Breakpoint variables are defined in variables.css
+ * --breakpoint-xs: 480px
+ * --breakpoint-sm: 640px
+ * --breakpoint-md: 768px
+ * --breakpoint-lg: 1024px
+ * --breakpoint-xl: 1280px
+ * --breakpoint-2xl: 1536px
+ */
+
+/* 
+ * Mobile First Media Queries
+ * These target screens from the specified size and up
+ */
+
+/* Extra small devices (phones, 480px and up) */
+@custom-media --viewport-xs (min-width: 480px);
+
+/* Small devices (large phones, tablets, 640px and up) */
+@custom-media --viewport-sm (min-width: 640px);
+
+/* Medium devices (tablets, 768px and up) */
+@custom-media --viewport-md (min-width: 768px);
+
+/* Large devices (desktops, 1024px and up) */
+@custom-media --viewport-lg (min-width: 1024px);
+
+/* Extra large devices (large desktops, 1280px and up) */
+@custom-media --viewport-xl (min-width: 1280px);
+
+/* 2X Extra large devices (larger desktops, 1536px and up) */
+@custom-media --viewport-2xl (min-width: 1536px);
+
+/* 
+ * Device Specific Media Queries
+ * These target specific device ranges
+ */
+
+/* Mobile only (up to 639px) */
+@custom-media --mobile-only (max-width: 639px);
+
+/* Tablet only (640px to 1023px) */
+@custom-media --tablet-only (min-width: 640px) and (max-width: 1023px);
+
+/* Desktop only (1024px and up) */
+@custom-media --desktop-only (min-width: 1024px);
+
+/* 
+ * Orientation Media Queries
+ */
+@custom-media --portrait (orientation: portrait);
+@custom-media --landscape (orientation: landscape);
+
+/* 
+ * Display Features Media Queries
+ */
+@custom-media --hover-device (hover: hover);
+@custom-media --touch-device (hover: none);
+
+/* 
+ * Preference Media Queries
+ */
+@custom-media --prefers-reduced-motion (prefers-reduced-motion: reduce);
+@custom-media --prefers-dark-mode (prefers-color-scheme: dark);
+@custom-media --prefers-light-mode (prefers-color-scheme: light);
+
+/* 
+ * Usage Examples:
+ *
+ * @media (--viewport-sm) {
+ *   // Styles for small devices and up
+ * }
+ *
+ * @media (--mobile-only) {
+ *   // Styles for mobile devices only
+ * }
+ *
+ * @media (--portrait) {
+ *   // Styles for portrait orientation
+ * }
+ *
+ * @media (--prefers-dark-mode) {
+ *   // Styles for dark mode
+ * }
+ */

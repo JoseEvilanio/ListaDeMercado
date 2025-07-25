@@ -1,0 +1,369 @@
+/* 
+ * Responsive Utilities
+ * Helper classes for responsive design
+ */
+
+/* 
+ * Responsive Display Classes
+ * Control visibility based on screen size
+ */
+
+/* Hide on specific screen sizes */
+.hide-xs {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .hide-xs {
+    display: initial;
+  }
+  .show-xs-only {
+    display: none;
+  }
+}
+
+.hide-sm {
+  display: initial;
+}
+
+@media (min-width: 640px) {
+  .hide-sm {
+    display: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .show-sm-only {
+    display: none;
+  }
+}
+
+.hide-md {
+  display: initial;
+}
+
+@media (min-width: 768px) {
+  .hide-md {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .show-md-only {
+    display: none;
+  }
+}
+
+.hide-lg {
+  display: initial;
+}
+
+@media (min-width: 1024px) {
+  .hide-lg {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .show-lg-only {
+    display: none;
+  }
+}
+
+/* Device-specific visibility */
+@media (max-width: 639px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Orientation-specific visibility */
+@media (orientation: portrait) {
+  .hide-portrait {
+    display: none !important;
+  }
+}
+
+@media (orientation: landscape) {
+  .hide-landscape {
+    display: none !important;
+  }
+}
+
+/* 
+ * Responsive Text Alignment
+ */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media (min-width: 640px) {
+  .sm\:text-left {
+    text-align: left;
+  }
+  
+  .sm\:text-center {
+    text-align: center;
+  }
+  
+  .sm\:text-right {
+    text-align: right;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-left {
+    text-align: left;
+  }
+  
+  .md\:text-center {
+    text-align: center;
+  }
+  
+  .md\:text-right {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-left {
+    text-align: left;
+  }
+  
+  .lg\:text-center {
+    text-align: center;
+  }
+  
+  .lg\:text-right {
+    text-align: right;
+  }
+}
+
+/* 
+ * Responsive Spacing
+ */
+.responsive-margin {
+  margin: var(--spacing-2);
+}
+
+@media (min-width: 640px) {
+  .responsive-margin {
+    margin: var(--spacing-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-margin {
+    margin: var(--spacing-6);
+  }
+}
+
+.responsive-padding {
+  padding: var(--spacing-2);
+}
+
+@media (min-width: 640px) {
+  .responsive-padding {
+    padding: var(--spacing-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-padding {
+    padding: var(--spacing-6);
+  }
+}
+
+/* 
+ * Responsive Flexbox Utilities
+ */
+.flex-direction-column {
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .sm\:flex-direction-row {
+    flex-direction: row;
+  }
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+@media (min-width: 640px) {
+  .sm\:flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .sm\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Flex order utilities */
+.order-first {
+  order: -1;
+}
+
+.order-last {
+  order: 999;
+}
+
+@media (min-width: 640px) {
+  .sm\:order-first {
+    order: -1;
+  }
+  
+  .sm\:order-last {
+    order: 999;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:order-first {
+    order: -1;
+  }
+  
+  .md\:order-last {
+    order: 999;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:order-first {
+    order: -1;
+  }
+  
+  .lg\:order-last {
+    order: 999;
+  }
+}
+
+/* 
+ * Responsive Font Sizes
+ */
+.responsive-text {
+  font-size: var(--font-size-sm);
+}
+
+@media (min-width: 640px) {
+  .responsive-text {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-text {
+    font-size: var(--font-size-lg);
+  }
+}
+
+.responsive-heading {
+  font-size: var(--font-size-xl);
+}
+
+@media (min-width: 640px) {
+  .responsive-heading {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-heading {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* 
+ * Responsive Width and Height
+ */
+.responsive-width {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .responsive-width {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-width {
+    width: 50%;
+  }
+}
+
+/* 
+ * Responsive Image Handling
+ */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 
+ * Responsive Table Utilities
+ */
+@media (max-width: 639px) {
+  .responsive-table {
+    display: block;
+  }
+  
+  .responsive-table thead {
+    display: none;
+  }
+  
+  .responsive-table tbody {
+    display: block;
+  }
+  
+  .responsive-table tr {
+    display: block;
+    margin-bottom: var(--spacing-4);
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--border-radius-md);
+  }
+  
+  .responsive-table td {
+    display: flex;
+    padding: var(--spacing-2);
+    text-align: right;
+    border-bottom: 1px solid var(--color-neutral-200);
+  }
+  
+  .responsive-table td:last-child {
+    border-bottom: none;
+  }
+  
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: var(--font-weight-semibold);
+    margin-right: auto;
+    text-align: left;
+  }
+}

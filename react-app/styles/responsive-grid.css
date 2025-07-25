@@ -1,0 +1,324 @@
+/* 
+ * Responsive Grid System
+ * A comprehensive grid system for responsive layouts
+ */
+
+:root {
+  /* Breakpoints */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* Grid configuration */
+  --grid-columns-mobile: 4;
+  --grid-columns-tablet: 8;
+  --grid-columns-desktop: 12;
+  --grid-gap-small: 0.5rem;
+  --grid-gap-medium: 1rem;
+  --grid-gap-large: 1.5rem;
+
+  /* Container max widths */
+  --container-max-xs: 100%;
+  --container-max-sm: 640px;
+  --container-max-md: 768px;
+  --container-max-lg: 1024px;
+  --container-max-xl: 1280px;
+  --container-max-2xl: 1536px;
+}
+
+/* Base container class */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+  box-sizing: border-box;
+}
+
+/* Container with different max-widths at different breakpoints */
+@media (min-width: 480px) {
+  .container {
+    max-width: var(--container-max-xs);
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: var(--container-max-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--container-max-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-max-lg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--container-max-xl);
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: var(--container-max-2xl);
+  }
+}
+
+/* Fluid container that always takes full width */
+.container-fluid {
+  width: 100%;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Grid system */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+  gap: var(--grid-gap-medium);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(var(--grid-columns-tablet), 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(var(--grid-columns-desktop), 1fr);
+  }
+}
+
+/* Grid gap variations */
+.grid-gap-small {
+  gap: var(--grid-gap-small);
+}
+
+.grid-gap-medium {
+  gap: var(--grid-gap-medium);
+}
+
+.grid-gap-large {
+  gap: var(--grid-gap-large);
+}
+
+/* Grid column spans for mobile (default) */
+.col-span-1 { grid-column: span 1; }
+.col-span-2 { grid-column: span 2; }
+.col-span-3 { grid-column: span 3; }
+.col-span-4 { grid-column: span 4; }
+
+/* Grid column spans for tablet */
+@media (min-width: 640px) {
+  .sm\:col-span-1 { grid-column: span 1; }
+  .sm\:col-span-2 { grid-column: span 2; }
+  .sm\:col-span-3 { grid-column: span 3; }
+  .sm\:col-span-4 { grid-column: span 4; }
+  .sm\:col-span-5 { grid-column: span 5; }
+  .sm\:col-span-6 { grid-column: span 6; }
+  .sm\:col-span-7 { grid-column: span 7; }
+  .sm\:col-span-8 { grid-column: span 8; }
+}
+
+/* Grid column spans for desktop */
+@media (min-width: 1024px) {
+  .lg\:col-span-1 { grid-column: span 1; }
+  .lg\:col-span-2 { grid-column: span 2; }
+  .lg\:col-span-3 { grid-column: span 3; }
+  .lg\:col-span-4 { grid-column: span 4; }
+  .lg\:col-span-5 { grid-column: span 5; }
+  .lg\:col-span-6 { grid-column: span 6; }
+  .lg\:col-span-7 { grid-column: span 7; }
+  .lg\:col-span-8 { grid-column: span 8; }
+  .lg\:col-span-9 { grid-column: span 9; }
+  .lg\:col-span-10 { grid-column: span 10; }
+  .lg\:col-span-11 { grid-column: span 11; }
+  .lg\:col-span-12 { grid-column: span 12; }
+}
+
+/* Grid column starts for precise positioning */
+.col-start-1 { grid-column-start: 1; }
+.col-start-2 { grid-column-start: 2; }
+.col-start-3 { grid-column-start: 3; }
+.col-start-4 { grid-column-start: 4; }
+
+@media (min-width: 640px) {
+  .sm\:col-start-1 { grid-column-start: 1; }
+  .sm\:col-start-2 { grid-column-start: 2; }
+  .sm\:col-start-3 { grid-column-start: 3; }
+  .sm\:col-start-4 { grid-column-start: 4; }
+  .sm\:col-start-5 { grid-column-start: 5; }
+  .sm\:col-start-6 { grid-column-start: 6; }
+  .sm\:col-start-7 { grid-column-start: 7; }
+  .sm\:col-start-8 { grid-column-start: 8; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:col-start-1 { grid-column-start: 1; }
+  .lg\:col-start-2 { grid-column-start: 2; }
+  .lg\:col-start-3 { grid-column-start: 3; }
+  .lg\:col-start-4 { grid-column-start: 4; }
+  .lg\:col-start-5 { grid-column-start: 5; }
+  .lg\:col-start-6 { grid-column-start: 6; }
+  .lg\:col-start-7 { grid-column-start: 7; }
+  .lg\:col-start-8 { grid-column-start: 8; }
+  .lg\:col-start-9 { grid-column-start: 9; }
+  .lg\:col-start-10 { grid-column-start: 10; }
+  .lg\:col-start-11 { grid-column-start: 11; }
+  .lg\:col-start-12 { grid-column-start: 12; }
+}
+
+/* Flexbox grid alternative */
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--grid-gap-medium));
+  margin-right: calc(-1 * var(--grid-gap-medium));
+}
+
+.flex-grid > * {
+  padding-left: var(--grid-gap-medium);
+  padding-right: var(--grid-gap-medium);
+  margin-bottom: var(--grid-gap-medium);
+}
+
+/* Flex column widths for mobile (default) */
+.flex-col-12 { width: 100%; }
+.flex-col-6 { width: 50%; }
+.flex-col-4 { width: 33.333333%; }
+.flex-col-3 { width: 25%; }
+
+/* Flex column widths for tablet */
+@media (min-width: 640px) {
+  .sm\:flex-col-12 { width: 100%; }
+  .sm\:flex-col-6 { width: 50%; }
+  .sm\:flex-col-4 { width: 33.333333%; }
+  .sm\:flex-col-3 { width: 25%; }
+  .sm\:flex-col-2 { width: 16.666667%; }
+}
+
+/* Flex column widths for desktop */
+@media (min-width: 1024px) {
+  .lg\:flex-col-12 { width: 100%; }
+  .lg\:flex-col-6 { width: 50%; }
+  .lg\:flex-col-4 { width: 33.333333%; }
+  .lg\:flex-col-3 { width: 25%; }
+  .lg\:flex-col-2 { width: 16.666667%; }
+  .lg\:flex-col-1 { width: 8.333333%; }
+}
+
+/* Auto-fit grid for responsive card layouts */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--grid-gap-medium);
+}
+
+/* Responsive spacing utilities */
+.responsive-margin {
+  margin: var(--spacing-sm);
+}
+
+@media (min-width: 640px) {
+  .responsive-margin {
+    margin: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-margin {
+    margin: var(--spacing-lg);
+  }
+}
+
+.responsive-padding {
+  padding: var(--spacing-sm);
+}
+
+@media (min-width: 640px) {
+  .responsive-padding {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-padding {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Responsive visibility classes */
+.hide-xs {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .hide-xs {
+    display: initial;
+  }
+  .show-xs-only {
+    display: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Responsive order classes for flex items */
+.order-first {
+  order: -1;
+}
+
+.order-last {
+  order: 999;
+}
+
+@media (min-width: 640px) {
+  .sm\:order-first {
+    order: -1;
+  }
+  .sm\:order-last {
+    order: 999;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:order-first {
+    order: -1;
+  }
+  .lg\:order-last {
+    order: 999;
+  }
+}
